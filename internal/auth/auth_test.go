@@ -16,7 +16,7 @@ func TestGetAPIKey(t *testing.T) {
 		wantErr bool
 	}{
 		{"simple", args{headers: http.Header{"Authorization": {"ApiKey 1234"}}}, "1234", false},
-		{"missing", args{headers: http.Header{}}, "", false},
+		{"missing", args{headers: http.Header{}}, "", true},
 		{"wrong", args{headers: http.Header{"Authorization": {"Bearer 1234"}}}, "", true},
 	}
 	for _, tt := range tests {
