@@ -5,6 +5,7 @@
 out
 learn-cicd-starter
 notely
+notely-*
 
 # Environment
 .env
