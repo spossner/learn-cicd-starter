@@ -31,3 +31,6 @@ jobs:
 
       - name: 'Use gcloud CLI'
         run: gcloud builds submit --tag europe-west10-docker.pkg.dev/notely-seppo/notely-ar-repo/spossner/notely:latest
+
+      - name: Deploy to Cloud Run
+        run: gcloud run deploy notely --image europe-west10-docker.pkg.dev/notely-seppo/notely-ar-repo/spossner/notely:latest --region europe-west10 --allow-unauthenticated --project notely-seppo --max-instances=4
